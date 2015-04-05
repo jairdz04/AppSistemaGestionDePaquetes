@@ -59,10 +59,7 @@ namespace AppSistemaGestionDePaquetes.Datos
 
         #region "Métodos"
 
-        public double calculateCost()
-        {
-            return (base.calculateCost() + this.fixedFee);
-        }
+       // public double calculateCost() {return (base.calculateCost() + this.fixedFee);}
 
         #endregion
 

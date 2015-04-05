@@ -60,10 +60,7 @@ namespace AppSistemaGestionDePaquetes.Datos
 
         #region "Métodos"
 
-        public double calculateCost()
-        {
-            return (base.Weight * (base.Cost + this.additionalCharge));
-        }
+        //public double calculateCost() {return (base.Weight * (base.Cost + this.additionalCharge));}
 
         #endregion
 
