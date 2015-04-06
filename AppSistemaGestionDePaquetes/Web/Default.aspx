@@ -17,7 +17,7 @@
         }
         #Contenedor {
             width: 100%;
-         height:423px;
+         height:618px;
          background-color:#e75c5c;
         }
 
@@ -71,7 +71,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Facturas" Width="144px" />
 
-        </div>
+       </div>
     
     </div>
     </form>
