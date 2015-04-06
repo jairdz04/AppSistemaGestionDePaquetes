@@ -13,5 +13,16 @@ namespace AppSistemaGestionDePaquetes.Web
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("WebForm1.aspx", true);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("WebForm2.aspx", true);
+
+        }
     }
 }

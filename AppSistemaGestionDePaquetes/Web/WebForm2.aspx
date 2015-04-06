@@ -9,76 +9,162 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSource1" ForeColor="Black">
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="ObjectDataSource1">
+            <AlternatingItemTemplate>
+                <tr style="background-color: #FFFFFF;color: #284775;">
+                    <td>
+                        <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="CityLabel" runat="server" Text='<%# Eval("City") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="StateLabel" runat="server" Text='<%# Eval("State") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="BoxLabel" runat="server" Text='<%# Eval("Box") %>' />
+                    </td>
+                </tr>
+            </AlternatingItemTemplate>
             <EditItemTemplate>
-                Id:
-                <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
-                <br />
-                Name:
-                <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
-                <br />
-                Address:
-                <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
-                <br />
-                City:
-                <asp:TextBox ID="CityTextBox" runat="server" Text='<%# Bind("City") %>' />
-                <br />
-                State:
-                <asp:TextBox ID="StateTextBox" runat="server" Text='<%# Bind("State") %>' />
-                <br />
-                Box:
-                <asp:TextBox ID="BoxTextBox" runat="server" Text='<%# Bind("Box") %>' />
-                <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+                <tr style="background-color: #999999;">
+                    <td>
+                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="CityTextBox" runat="server" Text='<%# Bind("City") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="StateTextBox" runat="server" Text='<%# Bind("State") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="BoxTextBox" runat="server" Text='<%# Bind("Box") %>' />
+                    </td>
+                </tr>
             </EditItemTemplate>
-            <EditRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-            <FooterStyle BackColor="Tan" />
-            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <EmptyDataTemplate>
+                <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                    <tr>
+                        <td>No se han devuelto datos.</td>
+                    </tr>
+                </table>
+            </EmptyDataTemplate>
             <InsertItemTemplate>
-                Id:
-                <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
-                <br />
-                Name:
-                <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
-                <br />
-                Address:
-                <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
-                <br />
-                City:
-                <asp:TextBox ID="CityTextBox" runat="server" Text='<%# Bind("City") %>' />
-                <br />
-                State:
-                <asp:TextBox ID="StateTextBox" runat="server" Text='<%# Bind("State") %>' />
-                <br />
-                Box:
-                <asp:TextBox ID="BoxTextBox" runat="server" Text='<%# Bind("Box") %>' />
-                <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+                <tr style="">
+                    <td>
+                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="CityTextBox" runat="server" Text='<%# Bind("City") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="StateTextBox" runat="server" Text='<%# Bind("State") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="BoxTextBox" runat="server" Text='<%# Bind("Box") %>' />
+                    </td>
+                </tr>
             </InsertItemTemplate>
             <ItemTemplate>
-                Id:
-                <asp:Label ID="IdLabel" runat="server" Text='<%# Bind("Id") %>' />
-                <br />
-                Name:
-                <asp:Label ID="NameLabel" runat="server" Text='<%# Bind("Name") %>' />
-                <br />
-                Address:
-                <asp:Label ID="AddressLabel" runat="server" Text='<%# Bind("Address") %>' />
-                <br />
-                City:
-                <asp:Label ID="CityLabel" runat="server" Text='<%# Bind("City") %>' />
-                <br />
-                State:
-                <asp:Label ID="StateLabel" runat="server" Text='<%# Bind("State") %>' />
-                <br />
-                Box:
-                <asp:Label ID="BoxLabel" runat="server" Text='<%# Bind("Box") %>' />
-                <br />
+                <tr style="background-color: #E0FFFF;color: #333333;">
+                    <td>
+                        <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="CityLabel" runat="server" Text='<%# Eval("City") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="StateLabel" runat="server" Text='<%# Eval("State") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="BoxLabel" runat="server" Text='<%# Eval("Box") %>' />
+                    </td>
+                </tr>
             </ItemTemplate>
-            <PagerStyle ForeColor="DarkSlateBlue" HorizontalAlign="Center" BackColor="PaleGoldenrod" />
-        </asp:FormView>
+            <LayoutTemplate>
+                <table runat="server">
+                    <tr runat="server">
+                        <td runat="server">
+                            <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <tr runat="server" style="background-color: #E0FFFF;color: #333333;">
+                                    <th runat="server">Id</th>
+                                    <th runat="server">Name</th>
+                                    <th runat="server">Address</th>
+                                    <th runat="server">City</th>
+                                    <th runat="server">State</th>
+                                    <th runat="server">Box</th>
+                                </tr>
+                                <tr id="itemPlaceholder" runat="server">
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
+                            <asp:DataPager ID="DataPager1" runat="server">
+                                <Fields>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                </Fields>
+                            </asp:DataPager>
+                        </td>
+                    </tr>
+                </table>
+            </LayoutTemplate>
+            <SelectedItemTemplate>
+                <tr style="background-color: #E2DED6;font-weight: bold;color: #333333;">
+                    <td>
+                        <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="CityLabel" runat="server" Text='<%# Eval("City") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="StateLabel" runat="server" Text='<%# Eval("State") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="BoxLabel" runat="server" Text='<%# Eval("Box") %>' />
+                    </td>
+                </tr>
+            </SelectedItemTemplate>
+        </asp:ListView>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="getPersonas" TypeName="AppSistemaGestionDePaquetes.Datos.PersonRepositories"></asp:ObjectDataSource>
     <div>
     
